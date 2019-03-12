@@ -38,5 +38,21 @@ namespace ParadigmsLab
             lab22.createDictionary();
             return lab22.solve().ToArray<int>();
         }
+
+        [WebMethod]
+        public int[] Lab1_51(List<int> input)
+        {
+            Lab51 lab51 = new Lab51(input);
+            lab51.findAnswer();
+            int[] array = lab51.getArray();
+            int amount = lab51.getAmount();
+            int[] answer = new int[array.Length + 1];
+            for(int i = 0; i < answer.Length-1; i++)
+            {
+                answer[i] = array[i];
+            }
+            answer[array.Length] = amount;
+            return answer;
+        }
     }
 }
