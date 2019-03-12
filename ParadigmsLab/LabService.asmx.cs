@@ -19,40 +19,23 @@ namespace ParadigmsLab
     {
 
         [WebMethod]
-        public string HelloWorld()
-        {
-            return "Привет всем!";
-        }
-
-        [WebMethod]
-        public int Sosite_primitivi(int suka)
-        {
-            return suka*1488;
-
-        }
-
-        [WebMethod]
         public int[] Lab1_22(List<int> input)
         {
             Lab22 lab22 = new Lab22(input);
-            lab22.createDictionary();
-            return lab22.solve().ToArray<int>();
+            return lab22.findThreefoldElements();
         }
 
         [WebMethod]
         public int[] Lab1_51(List<int> input)
         {
             Lab51 lab51 = new Lab51(input);
-            lab51.findAnswer();
-            int[] array = lab51.getArray();
-            int amount = lab51.getAmount();
-            int[] answer = new int[array.Length + 1];
-            for(int i = 0; i < answer.Length-1; i++)
-            {
-                answer[i] = array[i];
-            }
-            answer[array.Length] = amount;
-            return answer;
+            return lab51.findBelowZero();
+        }
+        [WebMethod]
+        public int[] Lab2_4(List<int> input)
+        {
+            Lab2_4 lab2_4 = new Lab2_4(input);
+            return lab2_4.findLowPeaks();
         }
     }
 }

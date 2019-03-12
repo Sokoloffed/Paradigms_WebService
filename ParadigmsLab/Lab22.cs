@@ -8,15 +8,14 @@ namespace ParadigmsLab
     public class Lab22
     {
         List<int> array = new List<int>();
-
-        //IDictionary<int, int> integers = new Dictionary<int, int>();
         HashSet<int> answer = new HashSet<int>();
+
         public Lab22(List<int> input)
         {
             this.array = input;
         }
 
-        public void createDictionary()
+        public void createArray()
         {
             for (int i = 0; i < this.array.Count; i++)
             {
@@ -33,15 +32,15 @@ namespace ParadigmsLab
         }
 
 
-        public List<int> solve()
+        public int[] findThreefoldElements()
         {
+            createArray();
             List<int> lst = new List<int>();
             foreach(int hs in answer)
             {
                 lst.Add(hs);
             }
-            return lst;
-
+            return lst.ToArray<int>();
         }
     }
 }

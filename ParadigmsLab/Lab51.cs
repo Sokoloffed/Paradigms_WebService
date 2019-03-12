@@ -9,37 +9,26 @@ namespace ParadigmsLab
     {
         private List<int> array = new List<int>();
         List<int> answer = new List<int>();
-        int amount;
 
         public Lab51(List<int> input)
         {
             this.array = input;
-            this.amount = 0;
         }
 
-        public void findAnswer()
+        public int[] findBelowZero()
         {
             for(int i = 0; i < array.Count; i++)
             {
                 if(array.ElementAt(i) < 0)
                 {
                     answer.Add(i);
-                    amount++;
                 }
             }
-        }
-        
-        public int[] getArray()
-        {
+            int count = answer.Count();
+            answer.Add(count);
             return answer.ToArray<int>();
+
         }
-
-        public int getAmount()
-        {
-            return amount;
-        }
-
-
-
+     
     }
 }

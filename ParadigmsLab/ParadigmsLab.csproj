@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Lab22.cs" />
+    <Compile Include="Lab2_4.cs" />
     <Compile Include="Lab51.cs" />
     <Compile Include="LabService.asmx.cs">
       <DependentUpon>LabService.asmx</DependentUpon>
