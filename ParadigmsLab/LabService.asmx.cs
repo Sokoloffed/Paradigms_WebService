@@ -39,9 +39,10 @@ namespace ParadigmsLab
         }
 
         [WebMethod]
-        public void Lab3_7()
+        public void Lab3_7(string w)
         {
-            Lab3_7 lab = new Lab3_7();
+            Lab3_7 lab = new Lab3_7(w);
+
 
         }
     }
