@@ -37,5 +37,12 @@ namespace ParadigmsLab
             Lab2_4 lab2_4 = new Lab2_4(input);
             return lab2_4.findLowPeaks();
         }
+
+        [WebMethod]
+        public void Lab3_7()
+        {
+            Lab3_7 lab = new Lab3_7();
+
+        }
     }
 }

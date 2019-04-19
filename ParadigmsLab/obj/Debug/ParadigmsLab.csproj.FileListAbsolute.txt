@@ -5,3 +5,10 @@ C:\Users\Admin\source\repos\ParadigmsLab\ParadigmsLab\obj\Debug\ParadigmsLab.csp
 C:\Users\Admin\source\repos\ParadigmsLab\ParadigmsLab\obj\Debug\ParadigmsLab.csproj.CoreCompileInputs.cache
 C:\Users\Admin\source\repos\ParadigmsLab\ParadigmsLab\obj\Debug\ParadigmsLab.dll
 C:\Users\Admin\source\repos\ParadigmsLab\ParadigmsLab\obj\Debug\ParadigmsLab.pdb
+C:\Users\admin\source\repos\Paradigms_WebService\ParadigmsLab\bin\ParadigmsLab.dll.config
+C:\Users\admin\source\repos\Paradigms_WebService\ParadigmsLab\bin\ParadigmsLab.dll
+C:\Users\admin\source\repos\Paradigms_WebService\ParadigmsLab\bin\ParadigmsLab.pdb
+C:\Users\admin\source\repos\Paradigms_WebService\ParadigmsLab\obj\Debug\ParadigmsLab.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\Paradigms_WebService\ParadigmsLab\obj\Debug\ParadigmsLab.dll
+C:\Users\admin\source\repos\Paradigms_WebService\ParadigmsLab\obj\Debug\ParadigmsLab.pdb
+C:\Users\admin\source\repos\Paradigms_WebService\ParadigmsLab\obj\Debug\ParadigmsLab.csprojAssemblyReference.cache
