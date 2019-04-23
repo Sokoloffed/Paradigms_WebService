@@ -19,6 +19,7 @@ namespace ParadigmsLab
         List<string> rulesWithoutEpsilon;
         Dictionary<char, List<char>> SForAll;
         List<char> rightRecursive;
+        bool flag;
 
         public Lab45()
         {
@@ -74,50 +75,72 @@ namespace ParadigmsLab
 
             this.nonterminals = trimN;
 
-            FindIfRightRecursive();
+            rightRecursive = new List<char>();
+            SForAll = new Dictionary<char, List<char>>();
+            for(int i = 0; i < nonterminals.Length; i++)
+            {
+                flag = false;
+                SForAll.Add(nonterminals[i], new List<char>());
+                FindIfRightRecursive(nonterminals[i]);
+                if (flag)
+                {
+                    rightRecursive.Add(nonterminals[i]);
+                }
+            }
 
-            ReturnRightRecursive();
+           // ReturnRightRecursive();
 
             
         }
 
-        public void ReturnRightRecursive()
+        public void FindIfRightRecursive(char nonterm)
         {
-            rightRecursive = new List<char>();
-            for(int i = 0; i < SForAll.Count; i++)
+            int initialCount = SForAll[nonterm].Count;
+            SForAll[nonterm].Add(nonterm);
+            foreach(char nont in SForAll[nonterm].ToArray())
             {
-                if (SForAll.ElementAt(i).Value.Contains(SForAll.ElementAt(i).Key))
-                    rightRecursive.Add(SForAll.ElementAt(i).Key);
-            }
-        }
-
-        public void FindIfRightRecursive()
-        {
-            SForAll = new Dictionary<char, List<char>>();
-            for (int i = 0; i < nonterminals.Length; i++)
-            {
-                char nonterm = nonterminals.ElementAt(i);
-                List<char> S = new List<char>();
+                SForAll[nonterm].Remove(nonterm);
                 for(int j = 0; j < rulesWithoutEpsilon.Count; j++)
                 {
                     string rule = rulesWithoutEpsilon.ElementAt(j);
-                    if (rule[0] == nonterm)
+                    if (rule[0] == nont)
                     {
-                        for(int k = rule.Length - 1; k > 0; k--)
+                        for (int k = rule.Length - 1; k > 0; k--)
                         {
                             if (epsilonNonterminals.Contains(rule[k]))
                                 continue;
                             else
                             {
-                                S.Add(rule[k]);
+                                if (!SForAll[nonterm].Contains(rule[k]))
+                                {
+                                    if (rule[k] == nonterm)
+                                        flag = true;
+                                    SForAll[nonterm].Add(rule[k]);
+
+                                }
                                 break;
+
                             }
                         }
                     }
                     else continue;
-                }
-                SForAll.Add(nonterm, S);
+                }                      
+            }    
+            //List<char> noDuplicates = SForAll[nonterm].Distinct().ToList();
+            SForAll[nonterm].Distinct();
+            int finalCount = SForAll[nonterm].Count;
+            
+            if (finalCount > initialCount)
+                FindIfRightRecursive(nonterm);
+            if (flag)
+            {
+                return;
             }
+        }
+
+        public List<char> GetAllRightRecursiveNonterminals()
+        {
+            return this.rightRecursive;
         }
 
     }

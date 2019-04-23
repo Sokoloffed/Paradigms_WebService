@@ -45,5 +45,12 @@ namespace ParadigmsLab
 
 
         }
+        
+        [WebMethod]
+        public List<char> Lab4_5()
+        {
+            Lab45 lab = new Lab45();
+            return lab.GetAllRightRecursiveNonterminals();
+        } 
     }
 }
