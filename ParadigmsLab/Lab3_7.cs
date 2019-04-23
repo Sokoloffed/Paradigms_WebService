@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
+using ParadigmsLab;
 
 namespace ParadigmsLab
 {
@@ -24,12 +25,16 @@ namespace ParadigmsLab
 
         public Lab3_7(string w_word)
         {
+            Lab45 lab = new Lab45();
+
             if (!File.Exists("C:\automaton2.txt"))
             {
                 automatonLines = File.ReadAllLines("C:\\automaton2.txt");
             }
+
             this.w = w_word;
             DoPreparations();
+
 
         }
 

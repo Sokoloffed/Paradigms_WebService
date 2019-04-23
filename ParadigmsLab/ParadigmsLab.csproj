@@ -69,6 +69,7 @@
     <Compile Include="Lab22.cs" />
     <Compile Include="Lab2_4.cs" />
     <Compile Include="Lab3_7.cs" />
+    <Compile Include="Lab45.cs" />
     <Compile Include="Lab51.cs" />
     <Compile Include="LabService.asmx.cs">
       <DependentUpon>LabService.asmx</DependentUpon>
